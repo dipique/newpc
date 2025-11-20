@@ -62,5 +62,8 @@
   },
   {
     "id": "Microsoft.VisualStudioCode.Insiders"
+  },
+  {
+    "id": "tailscale.tailscale"
   }
 ]
