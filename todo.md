@@ -1,0 +1,1 @@
+set up ais shortcut (setup)
