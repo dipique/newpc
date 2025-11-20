@@ -1,0 +1,8 @@
+[ "ms-dotnettools.csharp"
+, "ms-vsliveshare.vsliveshare-pack"
+, "ms-python.python"
+, "ms-mssql.mssql"
+, "kutear.search-compare"
+, "ms-dotnettools.dotnet-interactive-vscode"
+, "ms-toolsai.jupyter"
+]

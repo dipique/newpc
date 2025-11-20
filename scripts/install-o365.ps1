@@ -1,0 +1,2 @@
+unblock-file $PSScriptRoot\..\external\Install-Office365Suite.ps1
+. $PSScriptRoot\..\external\Install-Office365Suite.ps1 -AcceptEULA TRUE -Channel Broad -EnableUpdates TRUE -ExcludeApps Groove,Lync -OfficeArch 64 -OfficeEdition O365BusinessRetail -LoggingPath c:\tmp\o365.log -PinItemsToTaskbar FALSE

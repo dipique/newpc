@@ -1,0 +1,66 @@
+[
+  {
+    "id": "9N0DX20HK701",
+    "s": "msstore",
+    "name": "Windows Terminal"
+  },
+  {
+    "id": "Microsoft.PowerShell",
+    "s": "winget",
+    "required": "true"
+  },
+  {
+    "id": "voidtools.Everything",
+    "s": "winget"
+  },
+  {
+    "id": "OpenJS.NodeJS",
+    "required": "true"
+  },
+  {
+    "id": "CoreyButler.NVMforWindows"
+  },
+  {
+    "id": "7zip.7zip",
+    "required": "true"
+  },
+  {
+    "id": "Notepad++.Notepad++"
+  },
+  {
+    "id": "SlackTechnologies.Slack"
+  },
+  {
+    "id": "Git.Git",
+    "required": "true"
+  },
+  {
+    "id": "GitHub.GitLFS"
+  },
+  {
+    "q": "Google.Chrome"
+  },
+  {
+    "q": "Google.Chrome.Beta"
+  },
+  {
+    "q": "wiztree"
+  },
+  {
+    "q": "sysinternals",
+    "s": "msstore"
+  },
+  {
+    "id": "Postman.Postman",
+    "s": "winget"
+  },
+  {
+    "id": "VideoLAN.VLC"
+  },
+  {
+    "q": "bottom"
+  },
+  {
+    "id": "Microsoft.VisualStudioCode.Insiders"
+  }
+]

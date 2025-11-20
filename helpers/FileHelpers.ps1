@@ -1,0 +1,45 @@
+function ShowHiddenFiles {
+    Push-Location
+    Set-Location HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    $changed = $false
+    $hidden = Get-ItemPropertyValue -Name Hidden
+    if ($hidden -eq '1') {
+        Write-Host 'Setting explorer to show hidden files'
+        Set-ItemProperty . Hidden '0'
+        $changed = $true
+    } else {
+        Write-Host 'Explorer already shows hidden files'
+    }
+
+    $superHidden = Get-ItemPropertyValue -Name ShowSuperHidden
+    if ($superHidden -eq '1') {
+        Write-Host 'Setting explorer to show super hidden files'
+        Set-ItemProperty . ShowSuperHidden '0'
+        $changed = $true
+    } else {
+        Write-Host 'Explorer already shows super hidden files'
+    }
+
+    if ($changed) {
+        Write-Host 'Restarting explorer to enact changes'
+        Stop-Process -processName: Explorer -force # This will restart the Explorer service to make this work.
+    }
+    
+    Pop-Location    
+}
+
+function ShowFileExtensions {
+    # http://superuser.com/questions/666891/script-to-set-hide-file-extensions
+    Push-Location
+    Set-Location HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    $current = Get-ItemPropertyValue -Name HideFileExt
+    if ($current -eq '1') {
+        Write-Host 'File extensions are hidden; setting to show'
+        Set-ItemProperty . HideFileExt '0'
+        Stop-Process -processName: Explorer -force # This will restart the Explorer service to make this work.
+    } else {
+        Write-Host 'File extensions are already shown'
+    }
+    
+    Pop-Location    
+}
