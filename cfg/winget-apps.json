@@ -65,5 +65,14 @@
   },
   {
     "id": "tailscale.tailscale"
+  },
+  {
+    "q": "Microsoft.DotNet.SDK.10"
+  },
+  {
+    "q": "Microsoft.DotNet.DesktopRuntime.10"
+  },
+  {
+    "q": "Microsoft.DotNet.AspNetCore.10"
   }
 ]

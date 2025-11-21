@@ -10,25 +10,19 @@ vn (optional?)
 # windows
 
 # configuration
+move existing configs into a separate script
 set machine name
 windows update
 features
 enable rdp
 need to do that thing for remote desktop
   runas /u:MicrosoftAccount\dipique@gmail.com winver
-debloat
-  move items to config
-  add instructions for detecting existing apps (to remove)
-  update list
 sleep/power profile
 terminal profile
 
 ## start menu
-  remove default apps
-  remove weather
   disable switcher
   left -aligned tasks
-  search bar
   add shortcuts -- should be an option for an app, maybe experiment in setup first
     everything
     vs code
