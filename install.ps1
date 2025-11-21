@@ -20,3 +20,10 @@ $global:TEMP_DIR = 'c:\tmp'
 . $PSScriptRoot\helpers\FileHelpers.ps1
 ShowHiddenFiles
 ShowFileExtensions
+
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "AppsUseLightTheme" -Value 0
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0
+Write-Host -f Yellow "Dark theme enabled.`n" # https://gist.github.com/bobby-tablez/4b5f1ee02c68a93dc8312c4ff858c0a7
+
+# create 
+git clone https://AISHealthcare@dev.azure.com/AISHealthcare/Lynx/_git/lynx

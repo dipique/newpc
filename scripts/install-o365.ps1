@@ -1,2 +1,4 @@
-unblock-file $PSScriptRoot\..\external\Install-Office365Suite.ps1
-. $PSScriptRoot\..\external\Install-Office365Suite.ps1 -AcceptEULA TRUE -Channel Broad -EnableUpdates TRUE -ExcludeApps Groove,Lync -OfficeArch 64 -OfficeEdition O365BusinessRetail -LoggingPath c:\tmp\o365.log -PinItemsToTaskbar FALSE
+winget settings --enable InstallerHashOverride
+winget install --id=Microsoft.Office -e --ignore-security-hash
+
+# this might need to be run manually; the former needs admin and maybe the second admin isn't allowed?
