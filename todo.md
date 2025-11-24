@@ -2,7 +2,6 @@
 chrome remote desktop
 set chrome security features?
 lynx
-  create dev drive
   c:\lynx\src, setup
   nodep-setup.ps1 -localdb rmt-lt-dkasche3
 vn (optional?)
@@ -21,8 +20,23 @@ features
 enable rdp
 need to do that thing for remote desktop
   runas /u:MicrosoftAccount\dipique@gmail.com winver
+create dev drive
 sleep/power profile
 terminal profile
+
+### dev drive
+
+https://learn.microsoft.com/en-us/windows/dev-drive/
+https://stackoverflow.com/a/78329177/2524708 <-- actual example of vhd drive
+
+vhd - portable, slower, space can be expanded more easily
+partition - faster
+
+Format-Volume -DriveLetter D -DevDrive
+
+optimizations
+fsutil devdrv trust <drive-letter>:
+fsutil devdrv enable /disallowAv
 
 ## start menu
   disable switcher
