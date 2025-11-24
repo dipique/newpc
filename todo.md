@@ -6,6 +6,10 @@ lynx
   c:\lynx\src, setup
   nodep-setup.ps1 -localdb rmt-lt-dkasche3
 vn (optional?)
+onedrive
+  set up
+  vault
+  disable desktop backup
 
 # windows
 
