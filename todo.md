@@ -23,6 +23,8 @@ need to do that thing for remote desktop
 create dev drive
 sleep/power profile
 terminal profile
+remove persistent learn about picture icon
+https://www.ninjaone.com/blog/remove-learn-about-this-picture-desktop-icon/
 
 ### dev drive
 
