@@ -43,3 +43,42 @@ function ShowFileExtensions {
     
     Pop-Location    
 }
+
+# Delete a folder along with all its contents
+function DeleteFolder {
+    param (
+        [string]$dir
+    )
+    $folder = Split-Path $dir -Leaf
+    $removeText = "removing '$folder' folder"
+    try {
+        # make sure it exists before trying to remove it
+        if (Test-Path $dir) {
+            Remove-Item -Recurse -Force $dir -ErrorAction Stop
+        }
+
+        if (Test-Path $dir) {
+            Write-Host "removal failed (folder still exists)"
+        }
+        
+        Write-Host "`t$removeText...Done"
+    }
+    catch {
+        if ($_.Exception -is [System.IO.DirectoryNotFoundException]) {
+            # Folder doesn't exist, so just ignore
+        }
+        else {
+            Write-Host "`t$removeText...Failed - $($_.Exception.Message)"
+        }
+    }
+}
+
+# Delete a subfolder of a directory along with all its contents
+function DeleteSubfolder {
+    param (
+        [string]$root,
+        [string]$folder
+    )
+    $dir = Join-Path $root $folder
+    DeleteFolder $dir
+}
