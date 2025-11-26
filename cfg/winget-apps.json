@@ -64,7 +64,7 @@
     "id": "Microsoft.VisualStudioCode.Insiders"
   },
   {
-    "id": "tailscale.tailscale"
+    "q": "tailscale"
   },
   {
     "q": "Microsoft.DotNet.SDK.10"
@@ -82,7 +82,7 @@
     "q": "obsidian"
   },
   {
-    "q": "audacity"
+    "id": "Audacity.Audacity"
   },
   {
     "id": "AutoHotkey.AutoHotkey"

@@ -26,6 +26,7 @@ terminal profile
 remove persistent learn about picture icon
 Accounts -> Sign-in-options -> Automatically save my restartable apps and restart when I sign back in
 https://www.ninjaone.com/blog/remove-learn-about-this-picture-desktop-icon/
+autostart passwords.ahk
 
 ### dev drive
 

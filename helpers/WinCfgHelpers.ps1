@@ -122,6 +122,23 @@ function PinAppToTaskbar {
 # PinAppToTaskbar "C:\Users\dipiq\AppData\Local\Programs\Microsoft VS Code Insiders\Code - Insiders.exe"
 # PinAppToTaskbar "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.23.12811.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe" -AppName Terminal
 
+$shortcutPath = CreateDesktopShortcut "C:\Program Files\Google\Chrome Beta\Application\chrome.exe" -AppName "Chrome Beta"
+$shell = New-Object -ComObject Shell.Application
+$taskbarPath = [System.IO.Path]::Combine([Environment]::GetFolderPath('ApplicationData'), 'Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar')
+$shell.Namespace($taskbarPath).Self.InvokeVerb('pindirectory', $shortcutPath)
+
+# couldn't seem to get that to work; also could try this:
+#   https://www.reddit.com/r/PowerShell/comments/nfdhuu/comment/gymbabc
+#   scary things here: https://community.spiceworks.com/t/pinning-taskbar-items-with-powershell-script/675939/4
+# jesus this is so dumb, maybe it doesn't work at all?
+
+# have to check if this actually works
+$QuickAccess = New-Object -ComObject shell.application
+$PathToPin = "C:\Path\To\Your\Folder"
+$QuickAccess.Namespace($PathToPin).Self.InvokeVerb("pintohome")
+# check if already exists: https://stackoverflow.com/questions/75961184/powershell-script-to-pin-folder-to-quick-access-removes-it-when-folder-already-p
+
+
 # obsidian
 
 # setup:

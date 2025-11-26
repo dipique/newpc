@@ -13,6 +13,7 @@ if (-not $CacheDir) {
 $global:TEMP_DIR = 'c:\tmp'
 
 . $PSScriptRoot\scripts\Debloat.ps1
+. $PSScriptRoot\helpers\Install-WinUpdates.ps1
 . $PSScriptRoot\scripts\install-chocolatey.ps1
 . $PSScriptRoot\scripts\Install-WingetApps.ps1 -JsonPath "$PSScriptRoot\cfg\winget-apps.json"
 . $PSScriptRoot\scripts\Install-vscode.ps1
