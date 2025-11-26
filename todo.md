@@ -24,6 +24,7 @@ create dev drive
 sleep/power profile
 terminal profile
 remove persistent learn about picture icon
+Accounts -> Sign-in-options -> Automatically save my restartable apps and restart when I sign back in
 https://www.ninjaone.com/blog/remove-learn-about-this-picture-desktop-icon/
 
 ### dev drive
@@ -53,6 +54,9 @@ md c:\dev
     everything
     vs code
     chrome
+
+# data
+homelab repo
 
 # infrastructure 
 * need to use a loop like setup to detect failures and resume

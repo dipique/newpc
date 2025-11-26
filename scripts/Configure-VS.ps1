@@ -1,8 +1,8 @@
-. $PSScriptRoot\..\helpers\create-shortcut.ps1
+. $PSScriptRoot\..\helpers\WinCfgHelpers.ps1
 
-$appName = 'Microsoft.VisualStudio.2022.Community' # winget name
+$appName = 'Microsoft.VisualStudio.2026.Community' # winget name
 $productId = 'Microsoft.VisualStudio.Product.Community'
-$channelId = 'VisualStudio.17.Release'
+$channelId = 'VisualStudio.18.Release'
 
 # make sure VS is already installed
 $listApp = winget list --exact -q $appName
