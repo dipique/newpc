@@ -9,6 +9,7 @@ onedrive
   set up
   vault
   disable desktop backup
+validate paths; if we make sure es (everything cli search) works, we can use it to find executables more easily, if winget doesn't already have a thing for that
 
 # windows
 
