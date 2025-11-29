@@ -9,6 +9,8 @@ onedrive
   set up
   vault
   disable desktop backup
+vs code: set PowerShell.ScriptAnalysis.settingsPath
+install poshgit (it's done in setup, dont think I'm doing it yet)
 
 # windows
 

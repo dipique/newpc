@@ -82,3 +82,19 @@ function DeleteSubfolder {
     $dir = Join-Path $root $folder
     DeleteFolder $dir
 }
+
+function Grant-UserAccess { # requires admitminsitrative privileges
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$User, # domain\username or username
+
+        [Parameter(Mandatory = $true)]
+        [string]$Path
+    )
+    # todo: validate account
+
+    $accessRule = New-Object System.Security.AccessControl.FileSystemAccessRule($User, 'FullControl', 'ContainerInherit,ObjectInherit', 'None', 'Allow')
+    $acl = Get-ACL $Path
+    $acl.AddAccessRule($accessRule)
+    Set-ACL -Path $Path -ACLObject $acl
+}
