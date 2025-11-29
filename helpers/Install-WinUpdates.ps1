@@ -1,5 +1,5 @@
 Write-Host 'Registering nuget'
-. $PSScriptRoot\CheckRunAsAdministrator.ps1
+. $PSScriptRoot\PSHelpers.ps1
 $LOG_DIR = "c:\tmp\logs"
 md $LOG_DIR -ErrorAction SilentlyContinue | Out-Null
 $LASTEXITCODE = 0
