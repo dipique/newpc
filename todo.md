@@ -11,6 +11,7 @@ onedrive
   disable desktop backup
 vs code: set PowerShell.ScriptAnalysis.settingsPath
 install poshgit (it's done in setup, dont think I'm doing it yet)
+validate paths; if we make sure es (everything cli search) works, we can use it to find executables more easily, if winget doesn't already have a thing for that
 
 # windows
 
