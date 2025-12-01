@@ -64,3 +64,22 @@ function EscalateLegacy() {
     [System.Diagnostics.Process]::Start($adminProc)
     Exit
 }
+
+function Run-RemoteScript {
+    param(        
+        [Parameter(Mandatory = $false)]
+        [string]$ComputerName = $env:COMPUTERNAME,
+
+        [Parameter(Mandatory = $true)]
+        [scriptblock]$Script,
+
+        [Parameter(Mandatory = $false)]
+        [string]$ArgumentList = @()
+    )
+    
+    if ($ComputerName -eq $env:COMPUTERNAME) {
+        & $Script -ArgumentList $ArgumentList
+    } else {
+        Invoke-Command -ComputerName $ComputerName -ScriptBlock $Script -ArgumentList $ArgumentList
+    }
+}
