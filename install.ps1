@@ -37,3 +37,7 @@ Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -N
 # unpin certain apps from taskbar
 $appNames = "Microsoft Store", "Outlook", "Microsoft Edge"
 ((New-Object -Com Shell.Application).NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items() | ? { $appNames -contains $_.Name }).Verbs() | ?{$_.Name.replace('&','') -match 'Unpin from taskbar'} | %{$_.DoIt(); $exec = $true}
+
+# enable pings
+New-NetFirewallRule -DisplayName "Allow ICMPv4 Echo Request" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
+New-NetFirewallRule -DisplayName "Allow ICMPv6 Echo Request" -Direction Inbound -Protocol ICMPv6 -IcmpType 8 -Action Allow
