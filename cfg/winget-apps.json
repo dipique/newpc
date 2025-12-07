@@ -98,5 +98,8 @@
   },
   {
     "q": "hwmonitor"
+  },
+  {
+    "q": "Microsoft.PowerToys"
   }
 ]
