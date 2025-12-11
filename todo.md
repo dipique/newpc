@@ -62,6 +62,7 @@ md c:\dev
 
 # data
 homelab repo
+work repo (homework)
 
 # infrastructure 
 * need to use a loop like setup to detect failures and resume
