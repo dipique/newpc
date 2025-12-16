@@ -22,8 +22,6 @@ set machine name
 windows update
 features
 enable rdp
-need to do that thing for remote desktop
-  runas /u:MicrosoftAccount\dipique@gmail.com winver
 create dev drive
 sleep/power profile
 terminal profile

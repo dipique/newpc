@@ -1,6 +1,7 @@
 param(
     [string]$LogDir,
-    [string]$CacheDir
+    [string]$CacheDir,
+    [string]$AccountEmail = "dipique@gmail.com"
 )
 
 if (-not $LogDir) {
@@ -41,3 +42,6 @@ $appNames = "Microsoft Store", "Outlook", "Microsoft Edge"
 # enable pings
 New-NetFirewallRule -DisplayName "Allow ICMPv4 Echo Request" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
 New-NetFirewallRule -DisplayName "Allow ICMPv6 Echo Request" -Direction Inbound -Protocol ICMPv6 -IcmpType 8 -Action Allow
+
+# enable RDP to this machine
+runas /u:MicrosoftAccount\$AccountEmail winver
