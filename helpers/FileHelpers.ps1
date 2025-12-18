@@ -98,3 +98,72 @@ function Grant-UserAccess { # requires admitminsitrative privileges
     $acl.AddAccessRule($accessRule)
     Set-ACL -Path $Path -ACLObject $acl
 }
+
+# Define the default regex pattern as a constant
+$DefaultExclusions = 'nuget|\\bin\\|\\obj\\|\\node_modules\\|\\.git|\\.vs\\|\\References\\|\\runtimes\\|\\packages\\'
+
+function Get-ProjectSize {
+    param (
+        [string]$Path = 'c:\lynx',
+        [string]$Pattern = $DefaultExclusions
+    )
+
+    $totalBytes = (Get-ChildItem -Path $Path -Recurse -Force -File | 
+        Where-Object { $_.FullName -notmatch $Pattern } | 
+        Measure-Object -Property Length -Sum).Sum
+
+    return $totalBytes / 1GB
+}
+
+function Get-ProjectTopFiles {
+    param (
+        [string]$Path = 'c:\lynx',
+        [string]$Pattern = $DefaultExclusions,
+        [int]$TopN = 10
+    )
+
+    Get-ChildItem -Path $Path -Recurse -Force -File |
+        Where-Object { $_.FullName -notmatch $Pattern } |
+        Sort-Object Length -Descending |
+        Select-Object -First $TopN -Property @{N='Size (MB)'; E={"{0:N2}" -f ($_.Length / 1MB)}}, FullName |
+        Format-Table -AutoSize
+}
+
+function Copy-FilesByExt {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$TargetsDir,
+
+        [Parameter(Mandatory=$true)]
+        [string]$SourceDir,
+
+        [Parameter(Mandatory=$true)]
+        [string[]]$PackageFolders,
+
+        [Parameter(Mandatory=$false)]
+        [string]$Extensions = "*.targets",
+
+        [Parameter(Mandatory=$false)]
+        [switch]$WhatIf
+    )
+
+    foreach ($pkg in $PackageFolders) {
+        $sourcePath = Join-Path $SourceDir $pkg
+        $destPath   = Join-Path $TargetsDir $pkg
+        
+        if (Test-Path $sourcePath) {
+            Get-ChildItem -Path $sourcePath -Filter $Extensions -Recurse | ForEach-Object {
+                $relativeFile = $_.FullName.Substring($sourcePath.Length + 1)
+                $targetFile = Join-Path $destPath $relativeFile
+                $targetDir = Split-Path $targetFile
+                
+                if (!$WhatIf) {
+                    if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Path $targetDir -Force | Out-Null }
+                    Copy-Item $_.FullName $targetFile -Force
+                } else {
+                    Write-Host "[WhatIf] Would copy: $relativeFile" -ForegroundColor Gray
+                }
+            }
+        }
+    }
+}
