@@ -45,3 +45,10 @@ New-NetFirewallRule -DisplayName "Allow ICMPv6 Echo Request" -Direction Inbound 
 
 # enable RDP to this machine
 runas /u:MicrosoftAccount\$AccountEmail winver
+
+# powershell modules -- need to make a json file for these
+
+# powershell winget client
+Install-PackageProvider -Name NuGet -Force
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery -Scope AllUsers
+# Import-Module Microsoft.WinGet.Client
