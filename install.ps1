@@ -43,6 +43,8 @@ $appNames = "Microsoft Store", "Outlook", "Microsoft Edge"
 New-NetFirewallRule -DisplayName "Allow ICMPv4 Echo Request" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
 New-NetFirewallRule -DisplayName "Allow ICMPv6 Echo Request" -Direction Inbound -Protocol ICMPv6 -IcmpType 8 -Action Allow
 
+Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
+
 # enable RDP to this machine
 runas /u:MicrosoftAccount\$AccountEmail winver
 
