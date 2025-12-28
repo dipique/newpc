@@ -10,7 +10,7 @@ if ($LASTEXITCODE -gt 0) {
 }
 $logPath = Join-Path $LOG_DIR "register_nuget.log"
 & $PSScriptRoot/RegisterNuget.ps1 > $logPath
-& $PSScriptRoot/PSUpdateSetup.ps1
+& $PSScriptRoot/PSWindowsUpdateSetup.ps1
 
 $MIN_WINDOWS10_RELEASE = 1809
 $osVer = (Get-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion').CurrentMajorVersionNumber
