@@ -101,5 +101,8 @@
   },
   {
     "q": "Microsoft.PowerToys"
+  },
+  {
+    "id": "Docker.DockerDesktop"
   }
 ]
