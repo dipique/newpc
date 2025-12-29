@@ -10,10 +10,13 @@ onedrive
   vault
   disable desktop backup
 vs code: set PowerShell.ScriptAnalysis.settingsPath
- -- and security unc hosts (add dorcas or files cannot be opened)
+ - and security unc hosts (add dorcas or files cannot be opened)
 install poshgit (it's done in setup, dont think I'm doing it yet)
 validate paths; if we make sure es (everything cli search) works, we can use it to find executables more easily, if winget doesn't already have a thing for that
 create json powershell modules to install (I guess no need to import)
+licensed software
+  4K downloader -- file + license
+  Eagle get -- file + settings (should these be optional?)
 
 # windows
 
