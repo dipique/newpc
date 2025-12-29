@@ -14,9 +14,11 @@ vs code: set PowerShell.ScriptAnalysis.settingsPath
 install poshgit (it's done in setup, dont think I'm doing it yet)
 validate paths; if we make sure es (everything cli search) works, we can use it to find executables more easily, if winget doesn't already have a thing for that
 create json powershell modules to install (I guess no need to import)
-licensed software
+licensed software -- installer + license
+  - should these be optional? maybe selectable at the beginning and build a cfg so it survives restarts?
   4K downloader -- file + license
   Eagle get -- file + settings (should these be optional?)
+  allsync
 
 # windows
 
