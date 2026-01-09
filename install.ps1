@@ -43,6 +43,18 @@ $appNames = "Microsoft Store", "Outlook", "Microsoft Edge"
 New-NetFirewallRule -DisplayName "Allow ICMPv4 Echo Request" -Direction Inbound -Protocol ICMPv4 -IcmpType 8 -Action Allow
 New-NetFirewallRule -DisplayName "Allow ICMPv6 Echo Request" -Direction Inbound -Protocol ICMPv6 -IcmpType 8 -Action Allow
 
+# SSH
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+Start-Service sshd
+Set-Service -Name "sshd" -StartupType Automatic
+New-NetFirewallRule -Name 'OpenSSH Server (sshd)' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" `
+                 -Name DefaultShell `
+                 -Value "C:\Program Files\PowerShell\7\pwsh.exe" `
+                 -PropertyType String `
+                 -Force
+# future: could save keys and keep them in some central repo
+
 Enable-WindowsOptionalFeature -Online -FeatureName $("Microsoft-Hyper-V", "Containers") -All
 
 # enable RDP to this machine
