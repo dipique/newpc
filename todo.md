@@ -19,7 +19,7 @@ licensed software -- installer + license
   4K downloader -- file + license
   Eagle get -- file + settings (should these be optional?)
   allsync
-
+brother printer driver
 
 # windows
 
