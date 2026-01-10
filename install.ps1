@@ -66,3 +66,7 @@ runas /u:MicrosoftAccount\$AccountEmail winver
 Install-PackageProvider -Name NuGet -Force
 Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery -Scope AllUsers
 # Import-Module Microsoft.WinGet.Client
+
+# there's probably a way to do this with winget-apps.json but for now...
+winget install Microsoft.VisualStudio.2022.BuildTools --force --override "--wait --quiet --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended" --accept-source-agreements --accept-package-agreements
+# I'm not actually sure it works but I've only tested on a machine with VS already installed

@@ -103,6 +103,9 @@
     "q": "Microsoft.PowerToys"
   },
   {
+    "q": "Rustlang.Rustup"
+  },
+  {
     "id": "Docker.DockerDesktop"
   }
 ]
