@@ -9,15 +9,21 @@ onedrive
   set up
   vault
   disable desktop backup
-vs code: set PowerShell.ScriptAnalysis.settingsPath
- - and security unc hosts (add dorcas or files cannot be opened)
+vs code
+ - user settings json add: {
+  "security.allowedUNCHosts": [
+    "dorcas"
+  ],
+  "files.hotExit": "onExitAndWindowClose"
+  "powershell.scriptAnalysis.settingsPath": "C:\\dev\\homelab\\ps\\PSScriptAnalyzerSettings.psd1",
+ }
 install poshgit (it's done in setup, dont think I'm doing it yet)
 validate paths; if we make sure es (everything cli search) works, we can use it to find executables more easily, if winget doesn't already have a thing for that
 create json powershell modules to install (I guess no need to import)
 licensed software -- installer + license
   - should these be optional? maybe selectable at the beginning and build a cfg so it survives restarts?
   4K downloader -- file + license
-  Eagle get -- file + settings (should these be optional?)
+  Eagle -- file + settings (should these be optional?)
   allsync
 brother printer driver
 
@@ -37,6 +43,7 @@ Accounts -> Sign-in-options -> Automatically save my restartable apps and restar
 https://www.ninjaone.com/blog/remove-learn-about-this-picture-desktop-icon/
 autostart passwords.ahk
 windows start -> Personalization -> Start -- all sorts of settings like showing recomendations
+put repo configuration into a cfg file
 
 ### dev drive
 
@@ -70,7 +77,7 @@ md c:\dev
 homelab repo
 work repo (homework)
 
-# infrastructure 
+# infrastructure
 * need to use a loop like setup to detect failures and resume
 * way to have optional scripts
 
