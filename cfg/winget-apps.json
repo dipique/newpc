@@ -106,6 +106,9 @@
     "q": "Rustlang.Rustup"
   },
   {
+    "q": "eibol.FFmpegBatchAVConverter"
+  },
+  {
     "id": "Docker.DockerDesktop"
   }
 ]
