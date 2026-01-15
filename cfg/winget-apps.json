@@ -109,6 +109,9 @@
     "q": "eibol.FFmpegBatchAVConverter"
   },
   {
+    "q": "MoritzBunkus.MKVToolNix"
+  },
+  {
     "id": "Docker.DockerDesktop"
   }
 ]
