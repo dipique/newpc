@@ -103,6 +103,15 @@
     "q": "Microsoft.PowerToys"
   },
   {
+    "q": "Rustlang.Rustup"
+  },
+  {
+    "q": "eibol.FFmpegBatchAVConverter"
+  },
+  {
+    "q": "MoritzBunkus.MKVToolNix"
+  },
+  {
     "id": "Docker.DockerDesktop"
   }
 ]
