@@ -27,11 +27,6 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\P
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "SystemUsesLightTheme" -Value 0
 Write-Host -f Yellow "Dark theme enabled.`n" # https://gist.github.com/bobby-tablez/4b5f1ee02c68a93dc8312c4ff858c0a7
 
-# remove winget web experience package (weather, news, etc.)
-Install-Module -Name Microsoft.WinGet.Client
-ipmo -Name Microsoft.WinGet.Client
-Get-WinGetPackage | ? { $_.Id -match 'webexperience' } | Uninstall-WinGetPackage
-
 # remove search bar
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name SearchBoxTaskbarMode -Value 0 -Type DWord -Force
 
