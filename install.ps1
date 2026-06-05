@@ -68,5 +68,13 @@ Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery -Scope
 # Import-Module Microsoft.WinGet.Client
 
 # there's probably a way to do this with winget-apps.json but for now...
+# used for rust development
 winget install Microsoft.VisualStudio.2022.BuildTools --force --override "--wait --quiet --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended" --accept-source-agreements --accept-package-agreements
 # I'm not actually sure it works but I've only tested on a machine with VS already installed
+
+# used for refreshenv
+Add-WindowsCapability -Online -Name WMIC~~~~
+
+# need to stick these in the cfg
+Add-MpPreference -ExclusionPath "C:\vn" # should we put this in dev?
+Add-MpPreference -ExclusionPath "C:\dev"

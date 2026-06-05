@@ -1,3 +1,5 @@
+Lynx setup seems to be creating user identities for all IIS app pools -- why?
+
 # apps
 chrome remote desktop
 set chrome security features?
@@ -11,6 +13,7 @@ onedrive
   disable desktop backup
 vs code: set PowerShell.ScriptAnalysis.settingsPath
  - and security unc hosts (add dorcas or files cannot be opened)
+ - claude extensions?
 install poshgit (it's done in setup, dont think I'm doing it yet)
 validate paths; if we make sure es (everything cli search) works, we can use it to find executables more easily, if winget doesn't already have a thing for that
 create json powershell modules to install (I guess no need to import)

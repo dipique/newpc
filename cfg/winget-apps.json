@@ -106,6 +106,12 @@
     "q": "Rustlang.Rustup"
   },
   {
+    "q": "protobuf"
+  },
+  {
+    "q": "Google.Protobuf"
+  },
+  {
     "id": "Docker.DockerDesktop"
   }
 ]
